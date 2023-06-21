@@ -1,9 +1,11 @@
 import MovieCard from "./MovieCard/MovieCard"
+import styles from "./Movies.module.css"
 
 const Movies = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <MovieCard />
+
     </div>
   )
 }

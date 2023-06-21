@@ -6,9 +6,12 @@
 
 html,
 body {
+  display: flex;
+  flex-direction: column;
   background: #F5F5F5;
   font-family: 'Roboto';
   font-style: normal;
+  height: fit-content;
 }
 
 a {

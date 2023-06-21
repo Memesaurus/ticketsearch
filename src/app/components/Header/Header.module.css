@@ -6,21 +6,13 @@
     padding: 24px 32px;
     position: sticky;
     top: 0;
-
     background: #333333;
 }
 
 .text {
-    width: 241px;
-    height: 36px;
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
-
     color: #FFFFFF;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }

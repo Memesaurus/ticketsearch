@@ -5,12 +5,12 @@
     padding: 24px;
     
     width: 43vh;
-    height: 77.5vh;
     background: #FFFFFF;
     border-radius: 8px;
 
     position: sticky;
-    top: 108px;
+    height: 77.3vh;
+    top: 110px;
 }
 
 .text {
