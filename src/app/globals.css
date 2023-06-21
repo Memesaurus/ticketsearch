@@ -6,9 +6,9 @@
 
 html,
 body {
-  max-width: 100vw;
   background: #F5F5F5;
-  overflow-x: hidden;
+  font-family: 'Roboto';
+  font-style: normal;
 }
 
 a {
