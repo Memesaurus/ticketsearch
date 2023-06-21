@@ -17,9 +17,6 @@
     width: 67px;
     height: 20px;
         
-    font-family: 'Courier New', Courier, monospace;
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 4px;
@@ -58,12 +55,37 @@
     border-radius: 8px;
 }
 
+.input::placeholder {
+    color: #999FA6;
+}
+
+.input:focus {
+    outline: none;
+    border: 1px solid #FF5500;
+}
+
+.input:focus::placeholder {
+    color: #1B1F23;
+}
+
 .select {
     appearance: none;
     background-repeat: no-repeat;
     background-position: right center;
     background-position: calc(100% - 17px) center;
     background-image: url('../../../../../public/DropDown.svg');
-    
     color: #999FA6;
+}
+
+.select:focus {
+    background-image: url('../../../../../public/DropDownReversed.svg');
+    color: #1B1F23;
+}
+
+.select select {
+    display: none;
+}
+
+.option {
+    color: #1B1F23;
 }
