@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 24px;
+    
+    width: 1000px;
+    height: 168px;
+
+    background: #FFFFFF;
+    border-radius: 8px;
+
+}
+
+.image {
+    border-radius: 8px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.counter {
+    margin-left: auto;
+}
