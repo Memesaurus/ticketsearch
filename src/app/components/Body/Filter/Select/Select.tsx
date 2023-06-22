@@ -1,7 +1,6 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useRef, useState } from "react";
-import { useSelect } from "./useSelect";
+import React, { useRef } from "react";
 import SelectContextProvider from "./SelectContextProvider";
 
 type Props = {
@@ -9,16 +8,16 @@ type Props = {
   className?: string;
 };
 
-
-
 const Select = ({
   placeholder,
   className,
   children,
 }: Props & React.PropsWithChildren) => {
+  const ref = useRef(null);
+
   return (
-    <SelectContextProvider placeholder={placeholder}>
-        <div tabIndex={0} className={className}>
+    <SelectContextProvider ref={ref} placeholder={placeholder}>
+        <div ref={ref} tabIndex={0} className={className}>
           {children}
         </div>
     </SelectContextProvider>
