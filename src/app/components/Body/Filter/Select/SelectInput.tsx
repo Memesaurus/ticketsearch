@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { FilterContext } from './Select';
 import Image from 'next/image';
 
@@ -9,11 +9,11 @@ type Props = {
 }
 
 const SelectInput = ({ className }: Props) => {
-  const value = useContext(FilterContext);
-
+  const [value, defaultValue] = useContext(FilterContext);
+  const spanTextColor = value !== defaultValue ? {color: 'black'} : {};
   return (
     <div className={className}>
-      <span>{value}</span>
+      <span style={spanTextColor}>{value}</span>
       <Image src='/DropDownArrow.svg' alt='arrow' width={18} height={18} />
     </div>
   )

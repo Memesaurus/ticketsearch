@@ -12,39 +12,53 @@ const Filter = () => {
         Фильтр поиска
       </span>
 
-      <span className={styles.text}>Название</span>
-      <input
-        className={classNames(styles.input, styles.text)}
-        placeholder="Введите название"
-      />
+      <div>
+        <span className={classNames(styles.text, styles.marginBottom)}>Название</span>
+        <input
+          className={classNames(styles.input, styles.text)}
+          placeholder="Введите название"
+        />
+      </div>
 
-      <span className={styles.text}>Жанр</span>
-      <Select
-        className={classNames(SFProText.className, styles.selectBody)}
-        placeholder="Выберите жанр"
-      >
-        <SelectInput
-          className={classNames(SFProText.className, styles.input, styles.select)}
-        />
-        <SelectOptions
-          className={classNames(styles.options)}
-          values={["a", "b", "c", "d"]}
-        />
-      </Select>
+      <div>
+        <span className={classNames(styles.text, styles.marginBottom)}>Жанр</span>
+        <Select
+          className={classNames(SFProText.className, styles.selectBody)}
+          placeholder="Выберите жанр"
+        >
+          <SelectInput
+            className={classNames(
+              SFProText.className,
+              styles.input,
+              styles.select
+            )}
+          />
+          <SelectOptions
+            className={classNames(styles.options)}
+            values={["a", "b", "c", "d"]}
+          />
+        </Select>
+      </div>
 
-      <span className={styles.text}>Кинотеатр</span>
-      <Select
-        className={classNames(SFProText.className, styles.selectBody)}
-        placeholder="Выберите кинотеатр"
-      >
-        <SelectInput
-          className={classNames(SFProText.className, styles.input, styles.select)}
-        />
-        <SelectOptions
-          className={classNames(styles.options)}
-          values={["a", "b", "c", "d"]}
-        />
-      </Select>
+      <div>
+        <span className={classNames(styles.text, styles.marginBottom)}>Кинотеатр</span>
+        <Select
+          className={classNames(SFProText.className, styles.selectBody)}
+          placeholder="Выберите кинотеатр"
+        >
+          <SelectInput
+            className={classNames(
+              SFProText.className,
+              styles.input,
+              styles.select
+            )}
+          />
+          <SelectOptions
+            className={classNames(styles.options)}
+            values={["a", "b", "c", "d"]}
+          />
+        </Select>
+      </div>
     </div>
   );
 };

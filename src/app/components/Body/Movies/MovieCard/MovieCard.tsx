@@ -10,7 +10,7 @@ const MovieCard = () => {
             <Image className={styles.image} src={src.src} width={100} height={120} alt='imgname'/>
             <div className={styles.title}>
               <span> Название Фильма </span>
-              <span> Жанр </span>
+              <span className={styles.genre}> Жанр </span>
             </div>
 
             <MovieCardCounter className={styles.counter} />

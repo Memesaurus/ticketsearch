@@ -19,13 +19,25 @@
 .title {
     display: flex;
     flex-direction: column;
+    gap: 8px;
+
+    font-weight: 600;
+    line-height: 20px;
+    font-size: 20px;
+
+    flex: 1 0 0;
+}
+
+.genre {
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 100;
 }
 
 .counter {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-left: auto;
 
     font-size: 20px;
     line-height: 20px;
