@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styles from './MovieCard.module.css'
 import src from './src.json'
+import MovieCardCounter from './MovieCardCounter'
 
 const MovieCard = () => {
     
@@ -12,9 +13,7 @@ const MovieCard = () => {
               <span> Жанр </span>
             </div>
 
-            <div className={styles.counter}>
-              - 0 +
-            </div>
+            <MovieCardCounter className={styles.counter} />
         </div>
   )
 }

@@ -5,12 +5,13 @@
     padding: 24px;
     
     width: 43vh;
+    height: 78.2vh;
     background: #FFFFFF;
     border-radius: 8px;
-
     position: sticky;
-    height: 77.3vh;
+
     top: 110px;
+    left: 32px;
 }
 
 .text {
@@ -55,6 +56,66 @@
     border-radius: 8px;
 }
 
+.selectBody {
+    width: 100%;
+}
+
+.selectBody:focus .select {
+    border: 1px solid #FF5500;
+}
+
+.selectBody:focus .select img {
+    rotate: 180deg;
+}
+
+.selectBody:focus .select span {
+    color: black;
+}
+
+.selectBody:focus .options {
+    display: block;
+}
+
+.selectBody:focus .input {
+    margin-bottom: 3px;
+}
+
+.select {
+    display: flex;
+}
+
+.select span {
+    color: #999FA6;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.select img {
+    margin-top: 1px;
+    margin-left: auto;
+    fill: white;
+}
+
+.options {
+    display: none;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0px 10px 22px -4px #1B1F23;
+    margin-bottom: 5px;
+}
+
+.options div {
+    border-radius: 8px;
+    margin-top: 1px;
+    padding: 12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.options div:hover {
+    background-color: #dadcdf;
+}
+ 
 .input::placeholder {
     color: #999FA6;
 }
@@ -68,24 +129,3 @@
     color: #1B1F23;
 }
 
-.select {
-    appearance: none;
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-position: calc(100% - 17px) center;
-    background-image: url('../../../../../public/DropDown.svg');
-    color: #999FA6;
-}
-
-.select:focus {
-    background-image: url('../../../../../public/DropDownReversed.svg');
-    color: #1B1F23;
-}
-
-.select select {
-    display: none;
-}
-
-.option {
-    color: #1B1F23;
-}
