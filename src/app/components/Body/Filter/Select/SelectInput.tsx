@@ -1,8 +1,7 @@
 'use client'
-
 import { useContext } from 'react'
-import { FilterContext } from './Select';
 import Image from 'next/image';
+import { FilterContext } from './SelectContextProvider';
 
 type Props = {
   className?: string;

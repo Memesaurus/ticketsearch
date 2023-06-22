@@ -1,7 +1,26 @@
+import React, { useRef, useState } from "react";
+import { useSelect } from "./useSelect";
 
-const SelectContextProvider = ({ children }: React.PropsWithChildren) => {
+export const FilterContext = React.createContext(["default", "default"]);
+export const FilterSwitcherContext = React.createContext<
+  ((val: string) => void)
+>(() => {});
+
+type Props = {
+    placeholder: string;
+}
+
+const SelectContextProvider = ({ placeholder, children }: Props & React.PropsWithChildren) => {
+    // const ref = useRef(null);
+    // const [filterValue, setValue] = useSelect(ref, placeholder);
+    const [filterValue, setValue] = useState(placeholder);
+    
   return (
-    <div>SelectContextProvider</div>
+    <FilterContext.Provider value={[filterValue, placeholder]}>
+        <FilterSwitcherContext.Provider value={setValue}>
+            {children}
+        </FilterSwitcherContext.Provider>
+    </FilterContext.Provider>
   )
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { FilterSwitcherContext } from './Select'
+import { FilterSwitcherContext } from './SelectContextProvider'
 
 type Props = {
     values: string[],
