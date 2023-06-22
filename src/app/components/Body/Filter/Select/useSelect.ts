@@ -8,10 +8,7 @@ export const useSelect = (
 
   const setSelectValue = useCallback((val: string) => {
     setValue(val);
-
-    if (ref.current) {
-        ref.current.blur();
-    }
+    ref?.current?.blur();
   }, [ref]);
 
   return [value, setSelectValue];

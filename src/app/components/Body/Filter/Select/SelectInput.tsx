@@ -1,15 +1,16 @@
 'use client'
 import { useContext } from 'react'
 import Image from 'next/image';
-import { FilterContext } from './SelectContextProvider';
+import { SelectContext } from './SelectContextProvider';
 
 type Props = {
   className?: string;
 }
 
 const SelectInput = ({ className }: Props) => {
-  const [value, defaultValue] = useContext(FilterContext);
+  const [value, defaultValue] = useContext(SelectContext);
   const spanTextColor = value !== defaultValue ? {color: 'black'} : {};
+  
   return (
     <div className={className}>
       <span style={spanTextColor}>{value}</span>

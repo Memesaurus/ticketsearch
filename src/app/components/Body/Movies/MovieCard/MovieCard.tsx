@@ -9,8 +9,8 @@ const MovieCard = () => {
         <div className={styles.container}>
             <Image className={styles.image} src={src.src} width={100} height={120} alt='imgname'/>
             <div className={styles.title}>
-              <span> Название Фильма </span>
-              <span className={styles.genre}> Жанр </span>
+              <span> Властелин колец: Возвращение короля </span>
+              <span className={styles.genre}> Фентези </span>
             </div>
 
             <MovieCardCounter className={styles.counter} />

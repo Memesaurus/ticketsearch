@@ -1,29 +1,36 @@
-import React, { useRef, useState } from "react";
+import React, { MutableRefObject, useState } from "react";
 import { useSelect } from "./useSelect";
+import { FilterKey } from "../../BodyContextProvider";
 
-export const FilterContext = React.createContext(["default", "default"]);
-export const FilterSwitcherContext = React.createContext<(val: string) => void>(
+
+export const SelectContext = React.createContext(["default", "default"]);
+export const SelectSwitcherContext = React.createContext<(val: string) => void>(
   () => {}
 );
+export const SelectTypeContext = React.createContext<FilterKey>('filmName');
 
 type Props = {
+  type: FilterKey;
   placeholder: string;
-  ref: React.MutableRefObject<null | HTMLDivElement>;
+  element: MutableRefObject<null | HTMLDivElement>;
 };
 
 const SelectContextProvider = ({
+  type,
   placeholder,
-  ref,
+  element,
   children,
 }: Props & React.PropsWithChildren) => {
-  const [filterValue, setValue] = useSelect(ref, placeholder);
+  const [filterValue, setValue] = useSelect(element, placeholder);
 
   return (
-    <FilterContext.Provider value={[filterValue, placeholder]}>
-      <FilterSwitcherContext.Provider value={setValue}>
-        {children}
-      </FilterSwitcherContext.Provider>
-    </FilterContext.Provider>
+    <SelectContext.Provider value={[filterValue, placeholder]}>
+      <SelectSwitcherContext.Provider value={setValue}>
+        <SelectTypeContext.Provider value={type}>
+          {children}
+        </SelectTypeContext.Provider>
+      </SelectSwitcherContext.Provider>
+    </SelectContext.Provider>
   );
 };
 

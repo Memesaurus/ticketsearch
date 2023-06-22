@@ -5,7 +5,11 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <span className={styles.text}> Билетопоиск </span>
-      <Image src="Basket.svg" width={28} height={25} alt="Корзина" />
+      
+      <div className={styles.cart}>
+        <span className={styles.counter}>30</span>
+        <Image src="Basket.svg" width={28} height={25} alt="Корзина" />
+      </div>
     </div>
   );
 };

@@ -9,6 +9,28 @@
     background: #333333;
 }
 
+.cart {
+    display: flex;
+    gap: 8px;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    color: white;
+    gap: 10px;
+    border-radius: 8px;
+    background: #F50;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
 .text {
     font-style: normal;
     font-weight: 700;
