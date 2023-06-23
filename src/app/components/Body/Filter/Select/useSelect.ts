@@ -1,4 +1,4 @@
-import { Dispatch, useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 
 export const useSelect = (
   ref: React.MutableRefObject<HTMLDivElement | null>,
@@ -7,7 +7,7 @@ export const useSelect = (
   const [value, setValue] = useState(initialValue);
 
   const setSelectValue = useCallback((val: string) => {
-    setValue(val);
+    setValue(val);    
     ref?.current?.blur();
   }, [ref]);
 

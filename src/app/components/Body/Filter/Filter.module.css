@@ -73,10 +73,6 @@
     color: black;
 }
 
-.selectBody:focus .options {
-    display: block;
-}
-
 .select {
     display: flex;
     padding: 10px 16px;
@@ -91,11 +87,15 @@
 }
 
 .options {
-    display: none;
-    margin-top: 4px;
+    position: absolute;
+    background-color: white;
     border-radius: 8px;
     padding: 5px;
     box-shadow: 0px 10px 22px -4px #1B1F23;
+    max-height: 200px;
+    overflow-y: auto;
+
+    z-index: 100;
 }
 
 .options div {
