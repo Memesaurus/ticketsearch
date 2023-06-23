@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useState } from "react";
+import React, { MutableRefObject, PropsWithChildren } from "react";
 import { useSelect } from "./useSelect";
 import { FilterKey } from "../../BodyContextProvider";
 
@@ -20,7 +20,7 @@ const SelectContextProvider = ({
   placeholder,
   element,
   children,
-}: Props & React.PropsWithChildren) => {
+}: PropsWithChildren<Props>) => {
   const [filterValue, setValue] = useSelect(element, placeholder);
 
   return (

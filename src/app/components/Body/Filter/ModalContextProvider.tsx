@@ -11,7 +11,7 @@ type Props = {
 
 }
 
-const ModalContextProvider = ({ children }: Props & PropsWithChildren) => {
+const ModalContextProvider = ({ children }: PropsWithChildren<Props>) => {
     const [modalState, setModal] = useState<ModalKey>(null);
 
     const switchModal = useCallback((type: ModalKey) => {

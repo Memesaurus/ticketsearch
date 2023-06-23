@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, useContext, useMemo } from "react";
+import { CSSProperties, useContext } from "react";
 import {
   SelectSwitcherContext,
   SelectTypeContext,
@@ -8,7 +8,6 @@ import {
 import { FilterContextChanger } from "../../BodyContextProvider";
 import { createPortal } from "react-dom";
 import { ModalContext, ModalContextSwitcher } from "../ModalContextProvider";
-import classNames from "classnames";
 
 type Props = {
   values: string[];

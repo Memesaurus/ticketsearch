@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { PropsWithChildren, useRef } from "react";
 import SelectContextProvider from "./SelectContextProvider";
 import { FilterKey } from "../../BodyContextProvider";
 
@@ -15,7 +15,7 @@ const Select = ({
   placeholder,
   className,
   children,
-}: Props & React.PropsWithChildren) => {
+}: PropsWithChildren<Props>) => {
   const ref = useRef(null);
 
   return (
