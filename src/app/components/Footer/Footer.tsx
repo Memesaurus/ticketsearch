@@ -1,10 +1,12 @@
+import classNames from "classnames";
+import AdaptiveLink from "../AdaptiveLink";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <span className={styles.text}> Вопросы-ответы </span>
-      <span className={styles.text}> О нас </span>
+    <div className={classNames(styles.footer, styles.text)}>
+      <AdaptiveLink to="/questions">Вопросы-ответы</AdaptiveLink>
+      <AdaptiveLink to="/about">О нас</AdaptiveLink>
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import { roboto } from './Fonts/Fonts'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 import './globals.css'
 
 export const metadata = {
@@ -13,7 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <Header />
+        <div className='container'>
+          {children}
+        </div>
+        <Footer />
+        </body>
     </html>
   )
 }
