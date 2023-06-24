@@ -1,5 +1,5 @@
 'use client'
-import { MouseEvent, useContext } from 'react'
+import { useContext } from 'react'
 import Image from 'next/image';
 import { SelectContext, SelectTypeContext } from './SelectContextProvider';
 import { ModalContextSwitcher, ModalKey } from '../ModalContextProvider';
