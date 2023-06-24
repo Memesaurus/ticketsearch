@@ -16,11 +16,10 @@ const Select = ({
   className,
   children,
 }: PropsWithChildren<Props>) => {
-  const ref = useRef(null);
 
   return (
-    <SelectContextProvider type={type} element={ref} placeholder={placeholder}>
-        <div ref={ref} tabIndex={0} className={className}>
+    <SelectContextProvider type={type} placeholder={placeholder}>
+        <div tabIndex={0} className={className}>
           {children}
         </div>
     </SelectContextProvider>

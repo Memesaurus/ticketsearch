@@ -1,5 +1,4 @@
-import React, { MutableRefObject, PropsWithChildren } from "react";
-import { useSelect } from "./useSelect";
+import React, { MutableRefObject, PropsWithChildren, useState } from "react";
 import { FilterKey } from "../../BodyContextProvider";
 
 
@@ -12,16 +11,14 @@ export const SelectTypeContext = React.createContext<FilterKey>('filmName');
 type Props = {
   type: FilterKey;
   placeholder: string;
-  element: MutableRefObject<null | HTMLDivElement>;
 };
 
 const SelectContextProvider = ({
   type,
   placeholder,
-  element,
   children,
 }: PropsWithChildren<Props>) => {
-  const [filterValue, setValue] = useSelect(element, placeholder);
+  const [filterValue, setValue] = useState(placeholder);
 
   return (
     <SelectContext.Provider value={[filterValue, placeholder]}>

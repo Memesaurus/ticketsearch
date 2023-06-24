@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, useContext, useRef } from "react";
+import { CSSProperties, useCallback, useContext, useRef } from "react";
 import {
   SelectSwitcherContext,
   SelectTypeContext,
@@ -8,7 +8,7 @@ import {
 import { FilterContextChanger } from "../../BodyContextProvider";
 import { createPortal } from "react-dom";
 import { ModalContext, ModalContextSwitcher } from "../ModalContextProvider";
-import useOnClickOutside from "./useOnClickOutside";
+import { useOnClickOutside } from "./useOnClickOutside";
 
 type Props = {
   values: string[];
