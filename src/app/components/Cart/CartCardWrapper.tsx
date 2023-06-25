@@ -1,6 +1,6 @@
-import MovieCard from "@/app/components/Body/Movies/MovieCard/MovieCard";
 import { selectMovie } from "@/app/redux/cart/selector";
 import { useAppSelector } from "@/app/redux/store";
+import MovieCard from "../Root/Movies/MovieCard/MovieCard";
 
 type Props = {
     id: string;

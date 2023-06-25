@@ -1,15 +1,15 @@
-import BodyContextProvider from "./components/Body/BodyContextProvider";
-import Filter from "./components/Body/Filter/Filter";
-import MovieList from "./components/Body/Movies/MoviesList";
+import RootContextProvider from './components/Root/RootContextProvider'
+import Filter from './components/Root/Filter/Filter'
+import MovieList from './components/Root/Movies/MoviesList'
 import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <BodyContextProvider>
+    <RootContextProvider>
     <div className={styles.container}>
       <Filter />
       <MovieList />
     </div>
-  </BodyContextProvider>
+  </RootContextProvider>
   )
 }

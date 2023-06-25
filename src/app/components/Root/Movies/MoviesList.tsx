@@ -3,7 +3,7 @@
 import { useCallback, useContext, useEffect, useMemo } from "react";
 import MovieCard from "./MovieCard/MovieCard";
 import styles from "./Movies.module.css";
-import { FilterContext } from "../BodyContextProvider";
+import { FilterContext } from "../RootContextProvider";
 import { useGetMoviesByTheatreQuery } from "@/app/redux/services/movieApi";
 
 export type Movie = {

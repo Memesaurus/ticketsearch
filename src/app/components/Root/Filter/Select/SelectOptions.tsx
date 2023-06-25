@@ -5,7 +5,7 @@ import {
   SelectSwitcherContext,
   SelectTypeContext,
 } from "./SelectContextProvider";
-import { FilterContextChanger } from "../../BodyContextProvider";
+import { FilterContextChanger } from "../../RootContextProvider";
 import { createPortal } from "react-dom";
 import { ModalContext, ModalContextSwitcher } from "../ModalContextProvider";
 import { useOnClickOutside } from "./useOnClickOutside";

@@ -17,7 +17,7 @@ export const FilterContextChanger = React.createContext<
   Dispatch<SetStateAction<FilterRecord>>
 >(() => {});
 
-const BodyContextProvider = ({ children }: PropsWithChildren) => {
+const RootContextProvider = ({ children }: PropsWithChildren) => {
   const [filter, changeFilter] = useState<FilterRecord>(initialValue);
 
   return (
@@ -29,4 +29,4 @@ const BodyContextProvider = ({ children }: PropsWithChildren) => {
   );
 };
 
-export default BodyContextProvider;
+export default RootContextProvider;

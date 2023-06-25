@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useContext } from "react";
-import { FilterContextChanger } from "../../BodyContextProvider";
+import { FilterContextChanger } from "../../RootContextProvider";
 import { debounce } from "lodash";
 
 type Props = {

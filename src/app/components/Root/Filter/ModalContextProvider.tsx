@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, useCallback, useState } from "react";
-import { FilterKey } from "../BodyContextProvider";
+import { FilterKey } from "../RootContextProvider";
 
 
 export type ModalKey = Exclude<FilterKey, "filmname"> | null;

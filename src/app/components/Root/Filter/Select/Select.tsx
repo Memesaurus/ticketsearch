@@ -2,7 +2,7 @@
 
 import React, { PropsWithChildren } from "react";
 import SelectContextProvider from "./SelectContextProvider";
-import { FilterKey } from "../../BodyContextProvider";
+import { FilterKey } from "../../RootContextProvider";
 
 type Props = {
   type: FilterKey
