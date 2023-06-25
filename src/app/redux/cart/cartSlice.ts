@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type CartState = Record<string, number>;
+export type CartState = Record<string, number>;
 
 const initialState: CartState = {};
 
-export const cartSlice = createSlice({
+const cartSlice = createSlice({
     name: 'cart',
     initialState: initialState,
     reducers: {
@@ -26,9 +26,12 @@ export const cartSlice = createSlice({
 
             state[payload] = count - 1;
         },
-        deleteItem: (state, { payload }) => {
+        resetItem: (state, { payload }) => {
             delete state[payload];
         },
         resetCart: () => initialState
     }
 });
+
+export const cartReducer = cartSlice.reducer;
+export const cartActions = cartSlice.actions;

@@ -1,6 +1,10 @@
+"use client"
+
 import Image from "next/image";
 import styles from "./Header.module.css";
 import AdaptiveLink from "../AdaptiveLink";
+import CartCounter from "./CartCounter";
+
 
 const Header = () => {
   return (
@@ -10,7 +14,7 @@ const Header = () => {
       </AdaptiveLink>
 
       <div className={styles.cart}>
-        <span className={styles.counter}>30</span>
+        <CartCounter />
         <AdaptiveLink to="/cart">
           <Image src="Basket.svg" width={28} height={25} alt="Корзина" />
         </AdaptiveLink>

@@ -1,10 +1,14 @@
-import { useCallback, useState } from "react";
+import { cartActions } from "@/app/redux/cart/cartSlice";
+import { selectItemCount } from "@/app/redux/cart/selector";
+import { useAppDispatch, useAppSelector } from "@/app/redux/store";
+import { useCallback } from "react";
 
-export const useCount = (initialValue: number = 0) => {
-  const [count, setCount] = useState(initialValue);
+export const useCount = (id: string) => {
+  const count = useAppSelector((state) => selectItemCount(state, id));
+  const dispatch = useAppDispatch();
 
-  const decrement = useCallback(() => setCount((current) => current - 1), []);
-  const increment = useCallback(() => setCount((current) => current + 1), []);
+  const decrement = useCallback(() => dispatch(cartActions.removeItem(id)), [dispatch, id]);
+  const increment = useCallback(() => dispatch(cartActions.addItem(id)), [dispatch, id]);
 
   return { count, decrement, increment };
 };

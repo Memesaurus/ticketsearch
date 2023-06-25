@@ -1,9 +1,10 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import MovieCard from "./MovieCard/MovieCard";
 import styles from "./Movies.module.css";
 import { FilterContext } from "../BodyContextProvider";
+import { useGetMoviesByTheatreQuery } from "@/app/redux/services/movieApi";
 
 export type Movie = {
   title: string;
@@ -18,23 +19,22 @@ export type Movie = {
 };
 
 const Movies = () => {
-  const filterData = useContext(FilterContext);
+  const {filmName, theatre, genre} = useContext(FilterContext);
+  
+  const { data, isLoading, isError } = useGetMoviesByTheatreQuery(theatre);
+
+  if (isLoading) {
+    return <div className={styles.container}>Loading...</div>
+  }
+
+  if (isError) {
+    return <div className={styles.container}>Error fetching movies</div>
+  }
+
+  console.log(data);
   
   return (
     <div className={styles.container}>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
-      <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
       <MovieCard genre="Genre" posterUrl="https://i.postimg.cc/pdCLNMqX/1.webp" title="Title"/>
     </div>
   );

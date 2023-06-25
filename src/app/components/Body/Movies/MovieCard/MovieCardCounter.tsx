@@ -3,11 +3,12 @@ import Image from 'next/image';
 import useCount from './useCount';
 
 type Props = {
+    id: string;
     className?: string;
 }
 
-const MovieCardCounter = ({ className }: Props) => {
-  const {count, increment, decrement} = useCount(0);
+const MovieCardCounter = ({ id, className }: Props) => {
+  const {count, increment, decrement} = useCount(id);
   return (
     <div className={className}>
     <button onClick={decrement} disabled={count === 0}>

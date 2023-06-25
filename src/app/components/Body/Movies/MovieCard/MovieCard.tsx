@@ -19,10 +19,10 @@ const MovieCard = ({ genre, title, posterUrl }: Props) => {
         />
         <div className={styles.title}>
           <span> {title} </span>
-          <span className={styles.genre}> {genre} </span>
+          <span className={styles.genre}>{genre}</span>
         </div>
 
-        <MovieCardCounter className={styles.counter} />
+        <MovieCardCounter id="123" className={styles.counter} />
       </Suspense>
     </div>
   );

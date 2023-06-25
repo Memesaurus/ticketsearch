@@ -6,12 +6,12 @@
     gap: 16px;
     
     width: 43vh;
-    height: calc(100vh - 86px * 2 - 24px * 2);
+    height: calc(100vh - 8.7vh * 2 - 24px * 2);
     background: #FFFFFF;
     border-radius: 8px;
     position: sticky;
 
-    top: 110px;
+    top: calc(8.7vh + 24px);
     left: 32px;
 }
 
@@ -81,7 +81,7 @@
 
 .select span {
     color: #999FA6;
-    font-size: 14px;
+    font-size: 1.414vh;
     line-height: 20px;
     flex: 1 0 0;
 }
