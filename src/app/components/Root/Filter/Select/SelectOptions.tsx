@@ -9,7 +9,6 @@ import { FilterContextChanger } from "../../BodyContextProvider";
 import { createPortal } from "react-dom";
 import { ModalContext, ModalContextSwitcher } from "../ModalContextProvider";
 import { useOnClickOutside } from "./useOnClickOutside";
-import { Cinema } from "../Filter";
 
 type Props = {
   values?: {id: string | null; name: string}[];

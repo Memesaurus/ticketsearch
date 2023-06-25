@@ -48,10 +48,13 @@ const MovieList = () => {
 
   return (
     <div className={styles.container}>
-      {filteredData?.map((movie) => (
+      {filteredData?.map(({ id, posterUrl, genre, title}) => (
         <MovieCard
-          key={movie.id}
-          movie={movie}
+          key={id}
+          id={id}
+          genre={genre}
+          posterUrl={posterUrl}
+          title={title}
         />
       ))}
     </div>

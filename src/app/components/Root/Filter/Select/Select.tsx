@@ -1,6 +1,6 @@
 "use client";
 
-import React, { PropsWithChildren, useRef } from "react";
+import React, { PropsWithChildren } from "react";
 import SelectContextProvider from "./SelectContextProvider";
 import { FilterKey } from "../../BodyContextProvider";
 

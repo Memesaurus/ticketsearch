@@ -15,11 +15,9 @@ import { cartActions } from "@/app/redux/cart/cartSlice";
 export type MovieData = Pick<Movie, "genre" | "title" | "posterUrl" | "id">;
 type Props = {
   cancelButton?: boolean;
-  movie: MovieData;
 };
 
-const MovieCard = ({ cancelButton, movie }: Props) => {
-  const { genre, id, posterUrl, title } = movie;
+const MovieCard = ({ cancelButton, genre, id, posterUrl, title }: Props & MovieData) => {
   const ruGenre = useRUGenre(genre);
   const pathname = usePathname();
   const dispatch = useAppDispatch();
@@ -56,7 +54,7 @@ const MovieCard = ({ cancelButton, movie }: Props) => {
       </div>
 
       <MovieCardCounter
-        movie={movie}
+        movie={{id, title, genre, posterUrl}}
         showModal={showModal}
       />
 

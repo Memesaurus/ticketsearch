@@ -1,0 +1,15 @@
+.ticketCount {
+  position: sticky;
+
+  top: calc(100vh - 69px - 8.7vh);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+
+  display: flex;
+  padding: 24px;
+  justify-content: space-between;
+
+  border-radius: 8px;
+  background: #fff;
+}
