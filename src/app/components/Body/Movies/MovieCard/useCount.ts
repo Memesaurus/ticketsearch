@@ -1,14 +1,15 @@
 import { cartActions } from "@/app/redux/cart/cartSlice";
-import { selectItemCount } from "@/app/redux/cart/selector";
+import { selectMovieCount } from "@/app/redux/cart/selector";
 import { useAppDispatch, useAppSelector } from "@/app/redux/store";
 import { useCallback } from "react";
+import { MovieData } from "./MovieCard";
 
-export const useCount = (id: string) => {
-  const count = useAppSelector((state) => selectItemCount(state, id));
+export const useCount = (movie: MovieData) => {
+  const count = useAppSelector((state) => selectMovieCount(state, movie.id));
   const dispatch = useAppDispatch();
 
-  const decrement = useCallback(() => dispatch(cartActions.removeItem(id)), [dispatch, id]);
-  const increment = useCallback(() => dispatch(cartActions.addItem(id)), [dispatch, id]);
+  const decrement = useCallback(() => dispatch(cartActions.removeItem(movie)), [dispatch, movie]);
+  const increment = useCallback(() => dispatch(cartActions.addItem(movie)), [dispatch, movie]);
 
   return { count, decrement, increment };
 };

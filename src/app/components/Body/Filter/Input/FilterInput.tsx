@@ -15,7 +15,7 @@ const FilterInput = ({ className, placeholder}: Props) => {
     }, 500), [setFilter]);
 
   return (
-    <input className={className} placeholder={placeholder} onInput={handleOnChange()} />
+    <input id="input" className={className} placeholder={placeholder} onInput={handleOnChange()} />
   )
 }
 

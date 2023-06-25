@@ -1,15 +1,19 @@
-import { Metadata } from 'next'
-import styles from './page.module.css'
+"use client";
 
-export const metadata: Metadata = {
-  title: 'Корзина - Билетопоиск',
-  description: 'Сайт для Шри'
-}
+import styles from "./page.module.css";
+import { useAppSelector } from "@/app/redux/store";
+import { selectMovies } from "@/app/redux/cart/selector";
+import MovieCard from "@/app/components/Body/Movies/MovieCard/MovieCard";
+
 
 export default function Page() {
+  const movies = useAppSelector((state) => selectMovies(state));
+
   return (
     <div className={styles.container}>
-        Корзина
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} cancelButton />
+      ))}
     </div>
-  )
+  );
 }

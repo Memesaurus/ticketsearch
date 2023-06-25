@@ -1,27 +1,40 @@
-'use client'
-import Image from 'next/image';
-import useCount from './useCount';
+"use client";
+import Image from "next/image";
+import useCount from "./useCount";
+import { MovieData } from "./MovieCard";
+import { usePathname } from "next/navigation";
+import styles from "./MovieCardCounter.module.css";
 
 type Props = {
-    id: string;
-    className?: string;
-}
+  movie: MovieData;
+  showModal?: () => void;
+};
 
-const MovieCardCounter = ({ id, className }: Props) => {
-  const {count, increment, decrement} = useCount(id);
+const MovieCardCounter = ({ movie, showModal }: Props) => {
+  const { count, increment, decrement } = useCount(movie);
+  const pathname = usePathname();
+
+  const handleDecrement = () => {
+    if (count === 1 && pathname === "/cart" && showModal) {
+      showModal();
+    } else {
+      decrement();
+    }
+  };
+
   return (
-    <div className={className}>
-    <button onClick={decrement} disabled={count === 0}>
-      <Image src="/Minus.svg" width={20} height={20} alt='-' />
-    </button>
+    <div className={styles.counter}>
+      <button onClick={handleDecrement} disabled={count === 0}>
+        <Image src="/Minus.svg" width={20} height={20} alt="-" />
+      </button>
 
-    {count}
+      {count}
 
-    <button onClick={increment} disabled={count >= 30}>
-      <Image src="/Plus.svg" width={20} height={20} alt='+'/>
-    </button>
+      <button onClick={increment} disabled={count >= 30}>
+        <Image src="/Plus.svg" width={20} height={20} alt="+" />
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default MovieCardCounter
+export default MovieCardCounter;

@@ -1,9 +1,15 @@
-import Body from "./components/Body/Body";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import BodyContextProvider from "./components/Body/BodyContextProvider";
+import Filter from "./components/Body/Filter/Filter";
+import MovieList from "./components/Body/Movies/MoviesList";
+import styles from './page.module.css'
 
 export default function Home() {
   return (
-    <Body />
+    <BodyContextProvider>
+    <div className={styles.container}>
+      <Filter />
+      <MovieList />
+    </div>
+  </BodyContextProvider>
   )
 }

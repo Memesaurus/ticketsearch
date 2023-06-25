@@ -33,32 +33,3 @@
     font-size: 16px;
     font-weight: 400;
 }
-
-.counter {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    font-size: 20px;
-    line-height: 20px;
-}
-
-.counter button {
-    display: flex;
-    align-items: center;
-    background-color: #FF5500;
-    border: 0px;
-    border-radius: 4px;
-}
-
-.counter img {
-    padding: 4px;
-}
-
-.counter button:hover {
-    background-color: #E94E00;
-}
-
-.counter button:disabled {
-    background-color: #FFA375;
-}

@@ -1,0 +1,70 @@
+.container {
+  padding: 24px;
+  align-items: flex-start;
+  flex: 1 0 0;
+
+  border-radius: 8px;
+  background: #fff;
+
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.movie {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.movie img {
+  border-radius: 8px;
+}
+
+.movieInfo {
+  gap: 24px;
+  align-self: stretch;
+
+  margin-bottom: 24px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.movieInfo h1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.movieInfo div span b {
+  font-weight: 600;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+  align-items: flex-start;
+  margin-top: 32px;
+  font-size: 16px;
+}
+
+.description h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}

@@ -1,36 +1,44 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { MovieData } from "@/app/components/Body/Movies/MovieCard/MovieCard";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-export type CartState = Record<string, number>;
+type MovieDataWithCount = { count: number; movie: MovieData };
+export type CartState = Record<string, MovieDataWithCount>;
 
 const initialState: CartState = {};
 
 const cartSlice = createSlice({
-    name: 'cart',
-    initialState: initialState,
-    reducers: {
-        addItem: (state, { payload }) => {
-            const count = state[payload] || 0;
-            state[payload] = count + 1;
-        },
-        removeItem: (state, { payload }) => {
-            const count = state[payload];
+  name: "cart",
+  initialState: initialState,
+  reducers: {
+    addItem: (state, { payload }: PayloadAction<MovieData>) => {
+      const item: MovieDataWithCount = state[payload.id] || {
+        count: 0,
+        movie: payload,
+      };
 
-            if (!count) {
-                return;
-            }
+      item.count++;
 
-            if (count === 1) {
-                delete state[payload];
-                return;
-            }
+      state[payload.id] = item;
+    },
+    removeItem: (state, { payload }: PayloadAction<MovieData>) => {
+      const count = state[payload.id].count;
 
-            state[payload] = count - 1;
-        },
-        resetItem: (state, { payload }) => {
-            delete state[payload];
-        },
-        resetCart: () => initialState
-    }
+      if (!count) {
+        return;
+      }
+
+      if (count === 1) {
+        delete state[payload.id];
+        return;
+      }
+
+      state[payload.id].count--;
+    },
+    resetItem: (state, { payload }: PayloadAction<string>) => {
+      delete state[payload];
+    },
+    resetCart: () => initialState,
+  },
 });
 
 export const cartReducer = cartSlice.reducer;

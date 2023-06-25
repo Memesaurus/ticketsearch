@@ -1,6 +1,6 @@
 "use client";
 
-import { CSSProperties, useCallback, useContext, useRef } from "react";
+import { CSSProperties, useContext, useRef } from "react";
 import {
   SelectSwitcherContext,
   SelectTypeContext,
@@ -9,9 +9,10 @@ import { FilterContextChanger } from "../../BodyContextProvider";
 import { createPortal } from "react-dom";
 import { ModalContext, ModalContextSwitcher } from "../ModalContextProvider";
 import { useOnClickOutside } from "./useOnClickOutside";
+import { Cinema } from "../Filter";
 
 type Props = {
-  values: string[];
+  values?: {id: string | null; name: string}[];
   className?: string;
 };
 
@@ -47,20 +48,20 @@ const SelectOptions = ({ values, className }: Props) => {
     modalState === type &&
     createPortal(
       <div ref={ref} className={className} style={style}>
-        {values.map((value) => (
+        {values?.map((value) => (
           <div
-            key={value}
+            key={value.id}
             onClick={() => {
-              setValue(value);
+              setValue(value.name);
               setFilter((current) => {
                 switchModalState(null);
-                return current[type] === value
+                return current[type] === value.id
                   ? current
-                  : (current = { ...current, [type]: value });
+                  : (current = { ...current, [type]: value.id });
               });
             }}
           >
-            {value}
+            {value.name}
           </div>
         ))}
       </div>,
