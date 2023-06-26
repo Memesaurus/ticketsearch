@@ -7,7 +7,7 @@ type Props = {
   params: { id: string };
 };
 
-// Из стейта брать фильм не получается, наверное если бы это был реальный проект мы бы сделали ручку для метадаты?
+// Если бы это был реальный проект мы бы сделали ручку для метадаты?
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {

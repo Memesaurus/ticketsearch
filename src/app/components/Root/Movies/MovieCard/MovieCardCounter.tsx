@@ -4,8 +4,8 @@ import useCount from "./useCount";
 import { MovieData } from "./MovieCard";
 import { usePathname } from "next/navigation";
 import styles from "./MovieCardCounter.module.css";
-import Plus from '../../../../../../public/Plus.svg';
-import Minus from '../../../../../../public/Minus.svg';
+import Plus from "../../../../../../public/Plus.svg";
+import Minus from "../../../../../../public/Minus.svg";
 
 type Props = {
   movie: MovieData;
@@ -27,13 +27,13 @@ const MovieCardCounter = ({ movie, showModal }: Props) => {
   return (
     <div className={styles.counter}>
       <button onClick={handleDecrement} disabled={count === 0}>
-        <Image src={Plus} width={20} height={20} alt="-" />
+        <Image src={Minus} width={20} height={20} alt="-" />
       </button>
 
       {count}
 
       <button onClick={increment} disabled={count >= 30}>
-        <Image src={Minus} width={20} height={20} alt="+" />
+        <Image src={Plus} width={20} height={20} alt="+" />
       </button>
     </div>
   );

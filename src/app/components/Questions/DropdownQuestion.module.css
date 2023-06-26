@@ -1,0 +1,31 @@
+.questionBlock {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #FFF;
+    width: 100%;
+    padding: 24px;
+    gap: 16px;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.answer {
+    display: none;
+}
+
+.questionBlock:focus .answer {
+    display: inline;
+}
+
+.questionBlock:focus img {
+    rotate: 180deg;
+}
