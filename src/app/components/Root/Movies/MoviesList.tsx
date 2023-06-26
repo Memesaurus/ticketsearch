@@ -25,7 +25,7 @@ const MovieList = () => {
   const filteredData = useMemo<Movie[] | undefined>(
     () =>
       data?.filter((movie) => {
-        if (filmName && !movie.title.toLowerCase().includes(filmName)) {
+        if (filmName && !movie.title.toLowerCase().includes(filmName.toLowerCase())) {
           return false;
         }
 

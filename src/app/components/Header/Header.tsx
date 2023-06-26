@@ -16,7 +16,7 @@ const Header = () => {
       <div className={styles.cart}>
         <CartCounter />
         <AdaptiveLink to="/cart">
-          <Image src="Basket.svg" width={28} height={25} alt="Корзина" />
+          <Image src="Basket.svg" width={32} height={32} alt="Корзина" />
         </AdaptiveLink>
       </div>
     </div>
