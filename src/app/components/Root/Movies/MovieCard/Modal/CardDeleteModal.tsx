@@ -7,6 +7,7 @@ import classNames from "classnames";
 import { roboto } from "@/app/Fonts/Fonts";
 import { useRef } from "react";
 import { useOnClickOutside } from "../../../Filter/Select/useOnClickOutside";
+import Cross from "../../../../../../../public/Cross.svg";
 
 type Props = {
   handleClose: (status: boolean) => void;
@@ -27,7 +28,7 @@ const CardDeleteModal = ({ handleClose }: Props) => {
         <div ref={ref} className={styles.modal}>
           <div className={styles.header}>
             Удаление билета
-            <Image onClick={() => handleClose(false)} src={"/Cross.svg"} width={16} height={16} alt="X" />
+            <Image onClick={() => handleClose(false)} src={Cross} width={16} height={16} alt="X" />
           </div>
 
           <span>Вы уверены, что хотите удалить билет?</span>

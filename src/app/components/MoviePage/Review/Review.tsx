@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./Review.module.css";
+import NoAvatar from "../../../../../public/NoAvatar.svg";
 
 export type Review = {
   id: string;
@@ -18,7 +19,7 @@ const Review = ({ review }: Props) => {
   return (
     <div className={styles.review}>
       <div className={styles.avatarFrame}>
-        <Image src={"/NoAvatar.svg"} width={32} height={32} alt=":)" />
+        <Image src={NoAvatar} width={32} height={32} alt=":)" />
       </div>
 
       <div className={styles.reviewContent}>

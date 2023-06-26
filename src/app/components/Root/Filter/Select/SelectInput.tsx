@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import Image from 'next/image';
 import { SelectContext, SelectTypeContext } from './SelectContextProvider';
 import { ModalContextSwitcher, ModalKey } from '../ModalContextProvider';
+import DropDownArrow from "../../../../../../public/DropDownArrow.svg";
 
 type Props = {
   className?: string;
@@ -17,7 +18,7 @@ const SelectInput = ({ className }: Props) => {
   return (
     <div id={type} className={className} onClick={() => modalStateSwitch(type)}>
       <span style={spanTextColor}>{value}</span>
-      <Image src='/DropDownArrow.svg' alt='arrow' width={18} height={18} />
+      <Image src={DropDownArrow} alt='arrow' width={18} height={18} />
     </div>
   )
 }
