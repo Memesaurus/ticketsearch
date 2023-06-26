@@ -13,7 +13,7 @@ export const generateMetadata = async ({
 }: Props): Promise<Metadata> => {
   const movie: Movie = await fetch(`${BASE_URL}/movie?movieId=${params.id}`)
     .then((res) => res.json())
-    .catch(_ => {
+    .catch((_) => {
       return { title: "Ошибка" };
     });
 
