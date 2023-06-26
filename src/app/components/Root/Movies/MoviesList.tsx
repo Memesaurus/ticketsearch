@@ -39,6 +39,8 @@ const MovieList = () => {
   );
 
   if (isLoading) {
+    console.log("started loading");
+    
     return <div className={styles.container}>Загрузка...</div>;
   }
 

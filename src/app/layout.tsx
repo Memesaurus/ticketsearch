@@ -1,8 +1,8 @@
-import { roboto } from "./Fonts/Fonts";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import { roboto } from "@/app/Fonts/Fonts";
+import Footer from "@/app/components/Footer/Footer";
+import Header from "@/app/components/Header/Header";
+import StoreProvider from "@/app/redux/StoreProvider";
 import "./globals.css";
-import StoreProvider from "./redux/StoreProvider";
 
 export const metadata = {
   title: "Билетопоиск",

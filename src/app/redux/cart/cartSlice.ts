@@ -7,7 +7,8 @@ export type CartState = {
   map: Record<string, MovieDataWithCount>;
 };
 
-//Массив тут для того, чтобы в оттуда в корзину брать стейт. Если брать мапу то будет ререндер при любом клике
+// Массив тут для того, чтобы в оттуда в корзину брать стейт. Либо это УМОМ, либо у меня плохая реализация стейта,
+// потому что если брать мапу то будет ререндер всей страницы при его изменении
 const initialState: CartState = {keys: [], map: {}};
 
 const cartSlice = createSlice({
@@ -24,7 +25,9 @@ const cartSlice = createSlice({
         },
       };
 
-      item.count++;
+      if (item.count < 30) {
+        item.count++;
+      }
 
       if (!state.keys.includes(payload.id)) {
         state.keys.push(payload.id);
