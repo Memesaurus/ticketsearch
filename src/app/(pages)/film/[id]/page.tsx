@@ -1,10 +1,9 @@
 "use client";
 
-import BigMovieCard from "@/app/components/Root/Movies/MovieCard/BigMovieCard/BigMovieCard";
+import BigMovieCard from "@/app/components/MoviePage/BigMovieCard/BigMovieCard";
 import styles from "./page.module.css";
 import { useGetMovieWithReviewsQuery } from "@/app/redux/services/movieApi";
-import Review from "@/app/components/Root/Movies/Review/Review";
-
+import Review from "@/app/components/MoviePage/Review/Review";
 
 type Props = {
   params: { id: string };

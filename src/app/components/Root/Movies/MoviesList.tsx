@@ -43,7 +43,7 @@ const MovieList = () => {
   }
 
   if (isError) {
-    return <div className={styles.container}>Error fetching movies</div>;
+    return <div className={styles.container}>Ошибка при получении фильмов</div>;
   }
 
   return (

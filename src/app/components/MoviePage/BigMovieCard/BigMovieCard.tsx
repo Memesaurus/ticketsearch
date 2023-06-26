@@ -3,8 +3,8 @@
 import styles from "./BigMovieCard.module.css";
 import Image from "next/image";
 import { useRUGenre } from "@/app/components/useRUGenre";
-import { Movie } from "../../MoviesList";
-import MovieCardCounter from "../MovieCardCounter";
+import { Movie } from "../../Root/Movies/MoviesList";
+import MovieCardCounter from "../../Root/Movies/MovieCard/MovieCardCounter";
 
 type Props = {
   movie: Movie

@@ -1,4 +1,4 @@
-import { MovieData } from "@/app/components/Body/Movies/MovieCard/MovieCard";
+import { MovieData } from "@/app/components/Root/Movies/MovieCard/MovieCard";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type MovieDataWithCount = { count: number; movie: Omit<MovieData, 'id'> };
@@ -7,6 +7,7 @@ export type CartState = {
   map: Record<string, MovieDataWithCount>;
 };
 
+//Массив тут для того, чтобы в оттуда в корзину брать стейт. Если брать мапу то будет ререндер при любом клике
 const initialState: CartState = {keys: [], map: {}};
 
 const cartSlice = createSlice({
